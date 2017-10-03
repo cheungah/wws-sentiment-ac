@@ -187,6 +187,13 @@ function postMessageToSpace(spaceId, accessToken, textMsg, callback) {
     var urlToPostMessage = "/v1/spaces/" + spaceId + "/messages";
     jsonClient.headers.jwt = accessToken;
 
+    var title = "";
+    if (textMsg.substring(0, 10) === "It appears"){
+        	title="I was listening and...";
+    } else {
+        	title="I was listening and you said ...";
+    }
+        
     // Building the message
     var messageData = {
         type: "appMessage",
@@ -196,7 +203,7 @@ function postMessageToSpace(spaceId, accessToken, textMsg, callback) {
                 type: "generic",
                 version: 1.0,
                 color: "#00B6CB",
-                title: "I was listening and you said ...",
+                title: title,
                 text: textMsg,
                 actor: {
                     name: "Echobot",
