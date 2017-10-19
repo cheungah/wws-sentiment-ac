@@ -1,6 +1,6 @@
 ---
 applications:
-- name: wws-sentiment-ro
+- name: wws-sentiment-ac
   memory: 128M
-  host: wws-sentiment-ro
+  host: wws-sentiment-ac
   domain: mybluemix.net
